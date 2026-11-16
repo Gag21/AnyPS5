@@ -348,8 +348,8 @@ VideoOutDriver::VideoOutDriver() {
 #ifdef __linux__
         SDL_SetHint(SDL_HINT_VIDEODRIVER, "wayland,x11");
 #endif
-        if (SDL_InitSubSystem(SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER) < 0) {
-            throw std::runtime_error(std::string("SDL_InitSubSystem(VIDEO | GAMECONTROLLER) failed: ") + SDL_GetError());
+        if (SDL_InitSubSystem(SDL_INIT_VIDEO) < 0) {
+            throw std::runtime_error(std::string("SDL_InitSubSystem(VIDEO) failed: ") + SDL_GetError());
         }
     });
     try {
